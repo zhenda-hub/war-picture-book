@@ -1,6 +1,67 @@
 @import "tailwindcss";
 
-/* Custom Base Styles */
+/* Theme CSS Variables */
+:root {
+  --theme-primary: #f5576c;
+  --theme-primary-light: #f093fb;
+  --theme-bg: #1a1a2e;
+  --theme-bg-secondary: #16213e;
+  --theme-text: #ffffff;
+  --theme-text-secondary: rgba(255, 255, 255, 0.8);
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-tag-bg: rgba(255, 255, 255, 0.1);
+  --theme-tag-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* 古典博物馆 */
+body.theme-classical {
+  --theme-primary: #B8860B;
+  --theme-primary-light: #D4A84B;
+  --theme-bg: #F5E6D3;
+  --theme-bg-secondary: #EBDCC5;
+  --theme-text: #2C1810;
+  --theme-text-secondary: #4A3528;
+  --theme-border: #C4B090;
+  --theme-tag-bg: rgba(44, 24, 16, 0.1);
+  --theme-tag-hover: rgba(44, 24, 16, 0.2);
+  --theme-combatant-a: #B8860B;  /* 金色系 */
+  --theme-combatant-b: #8B4513;  /* 棕色系 */
+  --el-color-primary: var(--theme-primary);
+}
+
+/* 现代极简 */
+body.theme-modern {
+  --theme-primary: #00BFFF;
+  --theme-primary-light: #66D9FF;
+  --theme-bg: #FFFFFF;
+  --theme-bg-secondary: #F7F7F7;
+  --theme-text: #333333;
+  --theme-text-secondary: #666666;
+  --theme-border: #E0E0E0;
+  --theme-tag-bg: rgba(0, 0, 0, 0.05);
+  --theme-tag-hover: rgba(0, 0, 0, 0.1);
+  --theme-combatant-a: #00BFFF;  /* 蓝色系 */
+  --theme-combatant-b: #FF6B6B;  /* 红色系 */
+  --el-color-primary: var(--theme-primary);
+}
+
+/* 暗黑史诗 */
+body.theme-epic {
+  --theme-primary: #FF4500;
+  --theme-primary-light: #FF6B35;
+  --theme-bg: #0D0D0D;
+  --theme-bg-secondary: #151515;
+  --theme-text: #E8E8E8;
+  --theme-text-secondary: #B8B8B8;
+  --theme-border: #4A4A4A;
+  --theme-tag-bg: rgba(255, 255, 255, 0.1);
+  --theme-tag-hover: rgba(255, 255, 255, 0.2);
+  --theme-combatant-a: #4A90E2;  /* 亮蓝 */
+  --theme-combatant-b: #E24A4A;  /* 亮红 */
+  --el-color-primary: var(--theme-primary);
+}
+
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -13,13 +74,13 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
+  color: var(--theme-text);
+  background: var(--theme-bg);
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 #app {
