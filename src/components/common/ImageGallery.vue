@@ -48,7 +48,7 @@ const currentImage = computed(() => {
 
 <style scoped>
 .image-gallery {
-  background: #000;
+  background: var(--theme-bg-secondary);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -80,7 +80,7 @@ const currentImage = computed(() => {
   gap: 0.5rem;
   padding: 1rem;
   overflow-x: auto;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--theme-bg-secondary);
 }
 
 .image-gallery__thumb {
@@ -96,11 +96,11 @@ const currentImage = computed(() => {
 }
 
 .image-gallery__thumb:hover {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: var(--theme-primary);
 }
 
 .image-gallery__thumb--active {
-  border-color: #f093fb;
+  border-color: var(--theme-primary);
 }
 
 .image-gallery__thumb img {

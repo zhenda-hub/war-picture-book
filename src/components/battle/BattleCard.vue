@@ -61,7 +61,7 @@ const props = defineProps({
 })
 
 const category = computed(() => categories[props.battle.era] || {})
-const categoryColor = computed(() => category.value.color || '#666')
+const categoryColor = computed(() => category.value.color || 'var(--theme-text-secondary)')
 const categoryIcon = computed(() => category.value.icon || '⚔️')
 
 function formatDate(date) {
@@ -77,18 +77,20 @@ function formatDate(date) {
 <style scoped>
 .battle-card {
   display: block;
-  background: #fff;
+  background: var(--theme-bg);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: inherit;
+  color: var(--theme-text);
+  border: 1px solid var(--theme-border);
 }
 
 .battle-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-color: var(--theme-primary);
 }
 
 .battle-card__image {
@@ -129,7 +131,7 @@ function formatDate(date) {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, var(--theme-primary-light, var(--theme-primary)) 0%, var(--theme-primary) 100%);
   color: #fff;
   width: 32px;
   height: 32px;
@@ -150,7 +152,7 @@ function formatDate(date) {
   font-weight: 700;
   margin: 0 0 0.75rem;
   line-height: 1.4;
-  color: #1a1a2e;
+  color: var(--theme-text);
 }
 
 .battle-card__meta {
@@ -163,7 +165,7 @@ function formatDate(date) {
 .battle-card__date,
 .battle-card__location {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--theme-text-secondary);
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -175,7 +177,7 @@ function formatDate(date) {
 
 .battle-card__significance {
   font-size: 0.875rem;
-  color: #555;
+  color: var(--theme-text-secondary);
   line-height: 1.5;
   margin: 0.75rem 0;
 }
@@ -188,31 +190,10 @@ function formatDate(date) {
 
 .battle-card__tag {
   font-size: 0.75rem;
-  color: #888;
-  background: #f5f5f5;
+  color: var(--theme-text);
+  background: var(--theme-bg-secondary);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-}
-
-/* 时代特定样式 */
-.battle-card--ancient .battle-card__title {
-  color: #8B4513;
-}
-
-.battle-card--classical .battle-card__title {
-  color: #654321;
-}
-
-.battle-card--medieval .battle-card__title {
-  color: #4A3728;
-}
-
-.battle-card--modern .battle-card__title {
-  color: #2F4F4F;
-}
-
-.battle-card--contemporary .battle-card__title {
-  color: #1a1a2e;
 }
 
 @media (max-width: 640px) {

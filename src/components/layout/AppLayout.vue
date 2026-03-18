@@ -26,7 +26,7 @@ import AppFooter from './AppFooter.vue'
 
 .main-content {
   flex: 1;
-  background: linear-gradient(180deg, #0f0f1e 0%, #1a1a2e 100%);
+  /* 继承 body 的主题背景 */
 }
 
 .fade-enter-active,

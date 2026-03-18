@@ -26,7 +26,7 @@
           v-for="(combatant, index) in battle.combatants"
           :key="index"
           :data="combatant"
-          :color="index === 0 ? '#4A90E2' : '#E24A4A'"
+          :color="index === 0 ? 'var(--theme-combatant-a)' : 'var(--theme-combatant-b)'"
         />
       </div>
     </section>
@@ -98,7 +98,7 @@ function formatDate(date) {
   font-weight: 800;
   margin: 0 0 1.5rem;
   line-height: 1.2;
-  color: #fff;
+  color: var(--theme-text);
 }
 
 .battle-detail__meta {
@@ -112,7 +112,7 @@ function formatDate(date) {
 .battle-detail__date,
 .battle-detail__location {
   font-size: 1.125rem;
-  color: #aaa;
+  color: var(--theme-text-secondary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -124,7 +124,7 @@ function formatDate(date) {
 
 .battle-detail__significance {
   font-size: 1.25rem;
-  color: #f093fb;
+  color: var(--theme-primary);
   font-style: italic;
   max-width: 600px;
   margin: 0 auto;
@@ -135,7 +135,7 @@ function formatDate(date) {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0 0 1.5rem;
-  color: #fff;
+  color: var(--theme-text);
 }
 
 .battle-detail__combatants {
@@ -157,7 +157,7 @@ function formatDate(date) {
 }
 
 .markdown-content {
-  color: #ddd;
+  color: var(--theme-text);
   line-height: 1.8;
   font-size: 1.0625rem;
 }
@@ -166,14 +166,14 @@ function formatDate(date) {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 2.5rem 0 1.25rem;
-  color: #fff;
+  color: var(--theme-text);
 }
 
 .markdown-content :deep(h3) {
   font-size: 1.375rem;
   font-weight: 600;
   margin: 2rem 0 1rem;
-  color: #fff;
+  color: var(--theme-text);
 }
 
 .markdown-content :deep(p) {
@@ -198,7 +198,7 @@ function formatDate(date) {
 
 .battle-detail__tags {
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--theme-border);
 }
 
 .tags-container {
@@ -209,16 +209,16 @@ function formatDate(date) {
 
 .battle-tag {
   font-size: 0.875rem;
-  color: #aaa;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--theme-text-secondary);
+  background: var(--theme-tag-bg);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .battle-tag:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: var(--theme-tag-hover);
+  color: var(--theme-text);
 }
 
 @media (max-width: 768px) {

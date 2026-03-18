@@ -45,7 +45,7 @@ defineProps({
 
 <style scoped>
 .info-card {
-  background: #fff;
+  background: var(--theme-bg);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -71,7 +71,7 @@ defineProps({
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--theme-border);
 }
 
 .info-card__row:last-child {
@@ -80,7 +80,7 @@ defineProps({
 
 .info-card__label {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--theme-text-secondary);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -88,7 +88,7 @@ defineProps({
 
 .info-card__value {
   font-size: 0.9375rem;
-  color: #333;
+  color: var(--theme-text);
   font-weight: 500;
 }
 

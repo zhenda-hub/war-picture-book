@@ -38,19 +38,21 @@ defineProps({
 .category-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--theme-bg);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: inherit;
+  color: var(--theme-text);
   position: relative;
+  border: 1px solid var(--theme-border);
 }
 
 .category-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-color: var(--category-color);
 }
 
 .category-card:hover .category-card__icon {
@@ -77,19 +79,19 @@ defineProps({
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
-  color: #1a1a2e;
+  color: var(--theme-text);
 }
 
 .category-card__period {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--theme-text-secondary);
   margin: 0 0 1rem;
   font-weight: 500;
 }
 
 .category-card__description {
   font-size: 0.9375rem;
-  color: #555;
+  color: var(--theme-text-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -98,7 +100,8 @@ defineProps({
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--theme-bg);
+  border: 1px solid var(--theme-border);
   border-radius: 20px;
   padding: 0.5rem 1rem;
   display: flex;
@@ -116,7 +119,7 @@ defineProps({
 
 .category-card__count .label {
   font-size: 0.625rem;
-  color: #999;
+  color: var(--theme-text-secondary);
   text-transform: uppercase;
 }
 

@@ -28,6 +28,9 @@
           </el-menu-item>
         </el-menu>
 
+        <!-- 主题切换器 -->
+        <ThemeSwitcher />
+
         <!-- 移动端汉堡按钮 -->
         <button
           v-show="isMobile"
@@ -80,6 +83,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { categories } from '@/composables/useBattleData.js'
+import ThemeSwitcher from '@/components/ThemeSwitcher.vue'
 
 const route = useRoute()
 const activeMenu = computed(() => route.path)
@@ -102,12 +106,14 @@ onUnmounted(() => {
 
 <style scoped>
 .app-header {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: var(--theme-bg);
+  border-bottom: 1px solid var(--theme-border);
   padding: 0.75rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 .container {
@@ -138,7 +144,7 @@ onUnmounted(() => {
 }
 
 .logo-text {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, var(--theme-primary-light, var(--theme-primary)) 0%, var(--theme-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -159,8 +165,8 @@ onUnmounted(() => {
 
 .nav-menu :deep(.el-menu-item) {
   padding: 0.5rem 1rem;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--theme-text);
+  background: var(--theme-bg-secondary);
   border-radius: 8px;
   margin: 0 0.25rem;
   transition: all 0.3s ease;
@@ -170,11 +176,13 @@ onUnmounted(() => {
 }
 
 .nav-menu :deep(.el-menu-item:hover) {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--theme-primary);
+  color: #fff;
 }
 
 .nav-menu :deep(.el-menu-item.is-active) {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--theme-primary);
+  color: #fff;
   border: none;
 }
 
@@ -204,13 +212,13 @@ onUnmounted(() => {
 .mobile-trigger span {
   width: 100%;
   height: 3px;
-  background: #fff;
+  background: var(--theme-text);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 .mobile-trigger:hover span {
-  background: #f093fb;
+  background: var(--theme-primary);
 }
 
 /* 抽屉样式 */
@@ -225,21 +233,21 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--theme-border);
 }
 
 .drawer-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--theme-text);
 }
 
 .close-btn {
   width: 32px;
   height: 32px;
   border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--theme-bg-secondary);
+  color: var(--theme-text);
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.25rem;
@@ -250,7 +258,8 @@ onUnmounted(() => {
 }
 
 .close-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--theme-primary);
+  color: #fff;
 }
 
 .drawer-menu {
@@ -261,7 +270,7 @@ onUnmounted(() => {
 }
 
 .drawer-menu :deep(.el-menu-item) {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--theme-text-secondary);
   padding: 1rem 1.5rem;
   font-size: 1rem;
   height: auto;
@@ -272,13 +281,13 @@ onUnmounted(() => {
 }
 
 .drawer-menu :deep(.el-menu-item:hover) {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--theme-bg-secondary);
+  color: var(--theme-text);
 }
 
 .drawer-menu :deep(.el-menu-item.is-active) {
-  background: rgba(240, 147, 251, 0.2);
-  color: #f093fb;
+  background: var(--theme-primary);
+  color: #fff;
 }
 
 .mobile-nav-icon {
@@ -288,7 +297,7 @@ onUnmounted(() => {
 
 /* 覆盖 Element Plus Drawer 样式 */
 :deep(.el-drawer) {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: var(--theme-bg);
 }
 
 :deep(.el-drawer__body) {
