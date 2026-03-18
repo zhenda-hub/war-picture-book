@@ -126,19 +126,19 @@ watch(era, () => {
 
 .battles-section {
   padding: 4rem 0;
-  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 100%);
+  background: linear-gradient(180deg, var(--theme-bg) 0%, var(--theme-bg-secondary) 100%);
   min-height: 400px;
 }
 
 .battles-info {
   text-align: center;
   margin-bottom: 2rem;
-  color: #aaa;
+  color: var(--theme-text-secondary);
   font-size: 1.125rem;
 }
 
 .battles-info strong {
-  color: #fff;
+  color: var(--theme-text);
   font-size: 1.5rem;
 }
 
@@ -147,14 +147,14 @@ watch(era, () => {
 .error-state {
   text-align: center;
   padding: 4rem 2rem;
-  color: #999;
+  color: var(--theme-text-secondary);
 }
 
 .back-link {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 2rem;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, var(--theme-primary-light, var(--theme-primary)) 0%, var(--theme-primary) 100%);
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -164,7 +164,7 @@ watch(era, () => {
 
 .back-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

@@ -75,8 +75,8 @@ onMounted(async () => {
 }
 
 .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--theme-bg) 0%, var(--theme-bg-secondary) 50%, var(--theme-bg) 100%);
+  color: var(--theme-text);
   padding: 6rem 2rem 4rem;
   text-align: center;
   position: relative;
@@ -104,7 +104,7 @@ onMounted(async () => {
   font-size: 3.5rem;
   font-weight: 900;
   margin: 0 0 1rem;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, var(--theme-primary-light, var(--theme-primary)) 0%, var(--theme-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -113,13 +113,13 @@ onMounted(async () => {
 .hero__subtitle {
   font-size: 1.5rem;
   margin: 0 0 1.5rem;
-  color: #e0e0e0;
+  color: var(--theme-text-secondary);
 }
 
 .hero__description {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #b0b0b0;
+  color: var(--theme-text-secondary);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -135,12 +135,12 @@ onMounted(async () => {
   font-weight: 800;
   text-align: center;
   margin: 0 0 3rem;
-  color: #fff;
+  color: var(--theme-text);
 }
 
 .categories-section {
   padding: 4rem 0;
-  background: #1a1a2e;
+  background: var(--theme-bg);
 }
 
 .category-grid {
@@ -151,13 +151,13 @@ onMounted(async () => {
 
 .featured-section {
   padding: 4rem 0;
-  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 100%);
+  background: linear-gradient(180deg, var(--theme-bg) 0%, var(--theme-bg-secondary) 100%);
 }
 
 .loading-state {
   text-align: center;
   padding: 4rem 2rem;
-  color: #999;
+  color: var(--theme-text-secondary);
 }
 
 @media (max-width: 768px) {

@@ -91,7 +91,7 @@ watch(slug, () => {
 <style scoped>
 .battle-detail-view {
   min-height: 100vh;
-  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 100%);
+  background: linear-gradient(180deg, var(--theme-bg) 0%, var(--theme-bg-secondary) 100%);
   padding: 2rem 0 4rem;
 }
 
@@ -99,7 +99,7 @@ watch(slug, () => {
 .error-state {
   text-align: center;
   padding: 4rem 2rem;
-  color: #999;
+  color: var(--theme-text-secondary);
   min-height: 50vh;
 }
 
@@ -114,9 +114,9 @@ watch(slug, () => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: none;
+  background: var(--theme-bg-secondary);
+  color: var(--theme-text);
+  border: 1px solid var(--theme-border);
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
@@ -125,20 +125,20 @@ watch(slug, () => {
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--theme-tag-hover);
   transform: translateX(-4px);
 }
 
 .related-battles {
   margin-top: 4rem;
   padding-top: 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--theme-border);
 }
 
 .related-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--theme-text);
   margin: 0 0 2rem;
 }
 
@@ -149,18 +149,20 @@ watch(slug, () => {
 }
 
 .related-card {
-  background: #fff;
+  background: var(--theme-bg-secondary);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
   color: inherit;
+  border: 1px solid var(--theme-border);
 }
 
 .related-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--theme-primary);
 }
 
 .related-card img {
@@ -174,14 +176,14 @@ watch(slug, () => {
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--theme-text);
 }
 
 .back-link {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 2rem;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, var(--theme-primary-light, var(--theme-primary)) 0%, var(--theme-primary) 100%);
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -191,7 +193,7 @@ watch(slug, () => {
 
 .back-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
