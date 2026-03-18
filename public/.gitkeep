@@ -1,0 +1,11 @@
+# Public Assets
+
+This directory contains static assets served directly.
+
+## Images
+
+Place battle images and other static images in the `images/` subdirectory.
+
+## Placeholder
+
+While actual historical images are being collected, placeholder images can be used.
